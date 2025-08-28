@@ -9,7 +9,12 @@ module.exports = function main(client){
 
 
     client.on('message_create', async message => {
-		if(message.body === "!ping")
-			await client.sendMessage(await message.getChat(), "pong");
+		try{
+			if(message.body === "!ping")
+				await client.sendMessage((await message.getChat()).id._serialized, "pong");
+		}catch(err)
+		{
+			console.error(err);
+		}
     });
 }
