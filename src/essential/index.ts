@@ -1,18 +1,16 @@
-const { Client, Message, MessageMedia, MessageTypes } = require('whatsapp-web.js');
-const { Contact } = require('whatsapp-web.js/src/structures');
+import { Client, Message } from 'whatsapp-web.js';
 
 /**
  * 
  * @param {Client} client 
  */
-module.exports = function main(client){
+export default function main(client: Client){
     
     client.on('message_create',
     /**
      * @param {Message} msg
-     * @param {Message} ack
      */
-    async (msg, ack) => {
+    async (msg: Message) => {
         
         const [cmd, ...args] = msg.body.split(" ");
 
