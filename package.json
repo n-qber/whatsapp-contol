@@ -4,8 +4,9 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "start": "node src/main.js",
-    "run": "node",
+    "start": "ts-node src/main.ts",
+    "build": "tsc",
+    "run": "ts-node",
     "test": "nodemon tests/main.js"
   },
   "author": "",
@@ -16,5 +17,13 @@
     "express": "^4.18.2",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.23.0"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "@types/qrcode-terminal": "^0.12.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
   }
 }
